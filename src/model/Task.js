@@ -9,3 +9,5 @@ class Task {
         this.done = !this.done;
     }
 }
+
+export default Task;

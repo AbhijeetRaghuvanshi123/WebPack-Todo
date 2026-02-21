@@ -19,4 +19,10 @@ class Todo {
     deleteTask(id) {
         this.taskList = this.taskList.filter(task => task.id !== id);
     }
+
+    getTaskById(id){
+        return this.taskList.find(task => task.id === id);
+    }
 }
+
+export default Todo;

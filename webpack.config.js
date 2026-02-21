@@ -30,7 +30,7 @@ export default {
         use: ["html-loader"],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|woff2?|ttf|eot)$/i,
         type: "asset/resource",
       },
     ],

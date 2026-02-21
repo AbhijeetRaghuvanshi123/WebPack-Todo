@@ -1,7 +1,7 @@
 class Project {
     constructor(title ) {
         this.id = crypto.randomUUID();
-        this.project = [];
+        this.todos = [];
         this.title = title;
     }
 
@@ -10,10 +10,16 @@ class Project {
             throw new Error("Must be a Todo instance");
         }
 
-        this.project.push(todo);
+        this.todos.push(todo);
     }
 
-    delete(id) {
-        this.project = this.project.filter(todo => todo.id !== id)
+    deleteTodo(id) {
+        this.todos = this.todos.filter(todo => todo.id !== id)
+    }
+
+    getTodoById(id){
+        return this.todos.find(todo => todo.id === id);
     }
 }
+
+export default Project;
