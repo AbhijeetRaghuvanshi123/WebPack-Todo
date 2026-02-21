@@ -1,5 +1,5 @@
 class TaskForm{
-    getForm(){
+    static getForm(){
         const form = document.createElement("form");
         form.classList.add("task-form");
 

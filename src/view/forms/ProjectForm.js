@@ -3,12 +3,12 @@ class ProjectForm{
         const form = document.createElement("form");
         form.classList.add("project-form");
 
-        const input = document.createElement("input");
-        input.type = 'text';
-        input.name = 'projectName';
-        input.required = true;
+        const title = document.createElement("input");
+        title.type = 'text';
+        title.name = 'title';
+        title.required = true;
 
-        form.appendChild(input);
+        form.appendChild(title);
 
         const button = document.createElement("button");
         button.innerText = "Create Project"
