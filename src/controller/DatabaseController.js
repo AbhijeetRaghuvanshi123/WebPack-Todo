@@ -1,33 +1,19 @@
-import Database from "../model/Database.js";
+import DataBase from "../model/Database.js";
 import Project from "../model/Project.js";
-import Todo from "../model/Todo.js";
-import Task from "../model/Task.js";
+import Content from "../view/pages/Content.js";
 
-class DatabaseController{
-
-    static addProject(form){
-        const formData = new FormData(form);
+class DataBaseController{
+    static addProject(formData){
         const title = formData.get("title");
         const project = new Project(title);
-        Database.addProject(project);
+        DataBase.addProject(project);
+        Content.loadProjects(DataBase.projects);
     }
 
-    static addTodo(form){
-        const formData = new FormData(form);
-        const title = formData.get("title");
-        const description = formData.get("description");
-        const duedate = formData.get("duedate");
-        const priority = formData.get("priority");
-        const todo = new Todo(title, description, duedate, priority);
-        Project.addTodo(todo);
-    }
-
-    static addTask(form){
-        const formData = new FormData(form);
-        const description = formData.get("description");
-        const task = new Task(description);
-        Todo.addTask(task);
+    static deleteProject(id){
+        DataBase.deleteProject(id);
+        Content.loadProjects(DataBase.projects)
     }
 }
 
-export default DatabaseController;
+export default DataBaseController;

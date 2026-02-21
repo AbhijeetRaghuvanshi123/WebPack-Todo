@@ -1,20 +1,16 @@
-class Project {
-    constructor(title ) {
+class Project{
+    constructor(title){
+        this.title = title;
         this.id = crypto.randomUUID();
         this.todos = [];
-        this.title = title;
     }
 
-    addTodo(todo) {
-        if(!(todo instanceof Todo)){
-            throw new Error("Must be a Todo instance");
-        }
-
+    addTodo(todo){
         this.todos.push(todo);
     }
 
-    deleteTodo(id) {
-        this.todos = this.todos.filter(todo => todo.id !== id)
+    deleteTodo(){
+        this.todos = this.todos.filter(todo => todo.it !== id);
     }
 
     getTodoById(id){

@@ -1,10 +1,14 @@
 import 'material-symbols/outlined.css';
 import "./styles.css";
-import DisplayController from "./controller/DisplayController.js";
+import UIController from './controller/UIController.js';
+import DataBase from './model/Database.js';
+import Content from './view/pages/Content.js';
 
 class Main{
     static init(){
-        DisplayController.loadProjectForm();
+        DataBase.init();
+        Content.loadProjects(DataBase.projects);
+        UIController.init();
     }
 }
 

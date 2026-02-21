@@ -8,13 +8,13 @@ class ProjectForm{
         title.name = 'title';
         title.required = true;
 
+        const submit = document.createElement("button");
+        submit.type = 'submit';
+        submit.innerText = 'Add Project';
+
         form.appendChild(title);
+        form.appendChild(submit);
 
-        const button = document.createElement("button");
-        button.innerText = "Create Project"
-        button.type = 'submit';
-
-        form.appendChild(button);
         return form;
     }
 }

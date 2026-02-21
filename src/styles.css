@@ -80,7 +80,7 @@ button{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 25px;
+  padding: 50px;
 }
 
 .footer{
@@ -102,7 +102,45 @@ button{
 
 .content{
   background-color: azure;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   height: 100%;
   width: 100%;
+  padding: 25px;
+  gap: 25px;
   border-radius: 50px;
+  display: grid;
+  gap: 25px;
+  place-items: center;
+}
+
+.project{
+  background-color: aqua;
+  height: 150px;
+  width: 200px;
+  border-radius: 15px;
+  color: white;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project > div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.view-todo , .delete-project{
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.view-todo{
+  background-color: green;
+}
+
+.delete-project{
+  background-color: red;
 }
