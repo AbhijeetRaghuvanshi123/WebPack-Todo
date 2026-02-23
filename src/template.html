@@ -1,44 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo Webpack</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProjectFlow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
 <body>
-    <div class="container">
-        <header>
-            <h1>ToDo App</h1>
-        </header>
-        <div class="sidebar">
-            <div id="addproject">
-                <input type="text" placeholder="Project Name" id="add-project">
-                <h2 id="add-project-btn">+</h2>
-            </div>
-            <hr>
-            <div class="projects">
-            </div>
-            <form>
-                <label for="title">Todo Name</label>
-                <input type="text" name="title" id="title" minlength="3" required>
-                <input type="date" name="dueDate" required>
-                <button type="submit">Addd To Project</button>
-            </form>
-        </div>
-        <div class="content">
-            <div class="todos">
-                <h2>Todos...</h2>
-                <div class="todo">
-                    <h3>Has lot of features</h3>
-                    <div class="delete">delete</div>
-                </div>
-                <div class="todo">
-                    <h3>Some insane feature</h3>
-                    <div class="delete">delete</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+<div id="app">
+  <header>
+    <div class="logo">Project<span>Flow</span></div>
+    <div class="header-meta">task manager</div>
+  </header>
+  <div id="content"></div>
+</div>
 
+<div id="toast-wrap"></div>
+
+<!-- Add/Edit Project Modal -->
+<div id="modal-project" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-title" id="modal-project-title">New Project</div>
+    <div class="modal-fields">
+      <div>
+        <div class="field-label">Project Name</div>
+        <input class="field-input" id="inp-project-name" placeholder="e.g. Website Redesign" maxlength="60"/>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="modal-project-cancel">Cancel</button>
+      <button class="btn btn-primary" id="modal-project-save">Create</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add/Edit Todo Modal -->
+<div id="modal-todo" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-title" id="modal-todo-title">New Task</div>
+    <div class="modal-fields">
+      <div>
+        <div class="field-label">Task Name</div>
+        <input class="field-input" id="inp-todo-name" placeholder="e.g. Design homepage mockup" maxlength="120"/>
+      </div>
+      <div>
+        <div class="field-label">Due Date</div>
+        <input class="field-input" id="inp-todo-due" type="date"/>
+      </div>
+      <div>
+        <div class="field-label">Priority</div>
+        <select class="field-select" id="inp-todo-priority">
+          <option value="none">No Priority</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="modal-todo-cancel">Cancel</button>
+      <button class="btn btn-primary" id="modal-todo-save">Add Task</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Delete Modal -->
+<div id="modal-confirm" class="modal-overlay">
+  <div class="modal confirm-modal">
+    <div class="modal-title">Are you sure?</div>
+    <div class="confirm-text" id="modal-confirm-text">This action cannot be undone.</div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="modal-confirm-cancel">Cancel</button>
+      <button class="btn btn-danger" id="modal-confirm-ok">Delete</button>
+    </div>
+  </div>
+</div>
+</body>
 </html>

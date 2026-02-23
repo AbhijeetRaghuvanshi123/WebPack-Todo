@@ -1,15 +1,6 @@
-const createProject = (name) => {
-    return{
-        name,
-        todos: [],
-        id: crypto.randomUUID(),
-        addTodo(todo){
-            this.todos.push(todo);
-        },
-        removeTodo(index){
-            this.todos.splice(index, 1);
-        }
-    };
-}
-
-export default createProject;
+export const createProject = (title) => ({
+  title,
+  id: crypto.randomUUID(),
+  createdOn: new Date().toISOString().slice(0, 10),
+  todos: []
+});
