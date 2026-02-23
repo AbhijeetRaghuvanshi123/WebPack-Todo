@@ -6,22 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo Webpack</title>
 <body>
-    <header>
-        <h1>Project Manager</h1>
-        <span class="material-symbols-outlined" id="add-project">
-            add_2
-        </span>
-    </header>
-
-    <div class="sidebar">
-
-    </div>
-    <div class="main">
-        <div class="content"></div>
-    </div>
-
-    <div class="footer">
-        <div class="pinned"></div>
+    <div class="container">
+        <header>
+            <h1>ToDo App</h1>
+        </header>
+        <div class="sidebar">
+            <div id="addproject">
+                <input type="text" placeholder="Project Name" id="add-project">
+                <h2 id="add-project-btn">+</h2>
+            </div>
+            <hr>
+            <div class="projects">
+            </div>
+            <form>
+                <label for="title">Todo Name</label>
+                <input type="text" name="title" id="title" minlength="3" required>
+                <input type="date" name="dueDate" required>
+                <button type="submit">Addd To Project</button>
+            </form>
+        </div>
+        <div class="content">
+            <div class="todos">
+                <h2>Todos...</h2>
+                <div class="todo">
+                    <h3>Has lot of features</h3>
+                    <div class="delete">delete</div>
+                </div>
+                <div class="todo">
+                    <h3>Some insane feature</h3>
+                    <div class="delete">delete</div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

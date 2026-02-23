@@ -30,6 +30,6 @@
     "webpack-dev-server": "^5.2.3"
   },
   "dependencies": {
-    "material-symbols": "^0.40.2"
+    "date-fns": "^4.1.0"
   }
 }
